@@ -1,4 +1,5 @@
 import stylisticPlugin from "@stylistic/eslint-plugin";
+import importXPlugin from "eslint-plugin-import-x";
 import eslint from "@eslint/js";
 import tsEslint, { type ConfigWithExtends } from "typescript-eslint";
 
@@ -31,6 +32,29 @@ export const createConfig = (options: CreateConfigOptions) => tsEslint.config(
         quoteProps: "consistent-as-needed",
     }) as ConfigWithExtends,
     {
+        name: "import-x",
+        plugins: {
+            "import-x": importXPlugin,
+        },
+        rules: {
+            "import-x/default": "error",
+            "import-x/export": "error",
+            "import-x/first": "error",
+            "import-x/named": "error",
+            "import-x/namespace": "error",
+            "import-x/newline-after-import": "error",
+            "import-x/no-duplicates": "error",
+            "import-x/no-empty-named-blocks": "error",
+            "import-x/no-mutable-exports": "error",
+            "import-x/no-named-as-default-member": "error",
+            "import-x/no-named-as-default": "error",
+            "import-x/no-named-default": "error",
+            "import-x/no-self-import": "error",
+            "import-x/no-webpack-loader-syntax": "error",
+            "import-x/order": ["error", { "newlines-between": "never" }],
+        },
+    },
+    {
         rules: {
             "@stylistic/indent": ["error", 4, {
                 ArrayExpression: 1,
@@ -55,10 +79,14 @@ export const createConfig = (options: CreateConfigOptions) => tsEslint.config(
                 SwitchCase: 1,
                 VariableDeclarator: 1,
             }],
+            // "@stylistic/linebreak-style": ["error", "unix"],
             "@stylistic/multiline-ternary": "off",
+            "@typescript-eslint/consistent-type-imports": "error",
+            "@typescript-eslint/no-import-type-side-effects": "error",
+            "@typescript-eslint/no-non-null-assertion": "off",
             "@typescript-eslint/no-unnecessary-type-parameters": "off",
             "@typescript-eslint/restrict-template-expressions": ["error", { allowNumber: true }],
-            "@typescript-eslint/strict-boolean-expressions": "error",
+            "@typescript-eslint/strict-boolean-expressions": ["error", { allowNullableBoolean: true }],
         },
     },
 );
