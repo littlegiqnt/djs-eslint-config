@@ -30,4 +30,9 @@ export const createConfig = (options: CreateConfigOptions) => tsEslint.config(
         commaDangle: "always-multiline",
         quoteProps: "consistent-as-needed",
     }) as ConfigWithExtends,
+    {
+        rules: {
+            "@typescript-eslint/no-unnecessary-type-parameters": "off",
+        },
+    },
 );
