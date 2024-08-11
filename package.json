@@ -1,0 +1,24 @@
+{
+  "name": "djs-eslint-config",
+  "description": "ESLint config for my discord.js & Typescript projects",
+  "version": "0.0.1",
+  "main": "src/index.ts",
+  "module": "src/index.ts",
+  "type": "module",
+  "public": true,
+  "scripts": {
+    "publish": "npm publish",
+    "inspect": "bunx @eslint/config-inspector --config eslint.config.mts"
+  },
+  "dependencies": {
+    "@eslint/js": "^9.9.0",
+    "@stylistic/eslint-plugin": "^2.6.2",
+    "eslint": "^9.9.0",
+    "typescript-eslint": "^8.0.1"
+  },
+  "devDependencies": {
+    "@types/bun": "latest",
+    "@types/eslint__js": "^8.42.3",
+    "typescript": "^5.5.4"
+  }
+}
