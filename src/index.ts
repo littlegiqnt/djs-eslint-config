@@ -1,5 +1,6 @@
 import stylisticPlugin from "@stylistic/eslint-plugin";
 import importXPlugin from "eslint-plugin-import-x";
+import unusedImportsPlugin from "eslint-plugin-unused-imports";
 import eslint from "@eslint/js";
 import tsEslint, { type ConfigWithExtends } from "typescript-eslint";
 
@@ -32,7 +33,7 @@ export const createConfig = (options: CreateConfigOptions) => tsEslint.config(
         quoteProps: "consistent-as-needed",
     }) as ConfigWithExtends,
     {
-        name: "import-x",
+        name: "giqnt/plugin/import-x",
         plugins: {
             "import-x": importXPlugin,
         },
@@ -55,6 +56,16 @@ export const createConfig = (options: CreateConfigOptions) => tsEslint.config(
         },
     },
     {
+        name: "giqnt/plugin/unused-imports",
+        plugins: {
+            "unused-imports": unusedImportsPlugin,
+        },
+        rules: {
+            "unused-imports/no-unused-imports": "error",
+        },
+    },
+    {
+        name: "giqnt/overrides",
         rules: {
             "@stylistic/indent": ["error", 4, {
                 ArrayExpression: 1,
