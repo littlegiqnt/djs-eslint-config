@@ -38,6 +38,7 @@ export const createConfig = (options: CreateConfigOptions) => tsEslint.config(
             "import-x": importXPlugin,
         },
         rules: {
+            "import-x/consistent-type-specifier-style": ["error", "prefer-top-level"],
             "import-x/default": "error",
             "import-x/export": "error",
             "import-x/first": "error",
