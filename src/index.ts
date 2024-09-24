@@ -2,7 +2,7 @@ import stylisticPlugin from "@stylistic/eslint-plugin";
 import importXPlugin from "eslint-plugin-import-x";
 import unusedImportsPlugin from "eslint-plugin-unused-imports";
 import eslint from "@eslint/js";
-import tsEslint, { type ConfigWithExtends } from "typescript-eslint";
+import tsEslint from "typescript-eslint";
 
 interface CreateConfigOptions {
     rootDir: string;
@@ -20,7 +20,7 @@ export const createConfig = (options: CreateConfigOptions) => tsEslint.config(
             },
         },
     },
-    stylisticPlugin.configs["disable-legacy"] as ConfigWithExtends,
+    stylisticPlugin.configs["disable-legacy"],
     stylisticPlugin.configs.customize({
         flat: true,
         indent: 4,
@@ -31,7 +31,7 @@ export const createConfig = (options: CreateConfigOptions) => tsEslint.config(
         braceStyle: "1tbs",
         commaDangle: "always-multiline",
         quoteProps: "consistent-as-needed",
-    }) as ConfigWithExtends,
+    }),
     {
         name: "giqnt/plugin/import-x",
         plugins: {
