@@ -11,17 +11,17 @@
     "inspect": "bunx @eslint/config-inspector --config eslint.config.mts"
   },
   "dependencies": {
-    "@eslint/js": "^9.11.1",
-    "@stylistic/eslint-plugin": "^2.8.0",
+    "@eslint/js": "^9.12.0",
+    "@stylistic/eslint-plugin": "^2.9.0",
     "@types/eslint__js": "^8.42.3",
-    "eslint": "^9.11.1",
-    "eslint-plugin-import-x": "^4.3.0",
+    "eslint": "^9.12.0",
+    "eslint-plugin-import-x": "^4.3.1",
     "eslint-plugin-unused-imports": "^4.1.4",
-    "jiti": "^1.21.6",
-    "typescript-eslint": "^8.7.0"
+    "jiti": "^2.3.1",
+    "typescript-eslint": "^8.8.0"
   },
   "devDependencies": {
-    "@types/bun": "latest",
+    "@types/bun": "^1.1.10",
     "typescript": "^5.6.2"
   }
 }
