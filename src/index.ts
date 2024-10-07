@@ -99,8 +99,10 @@ export const createConfig = (options: CreateConfigOptions) => tsEslint.config(
             "@typescript-eslint/no-unnecessary-type-parameters": "off",
             "@typescript-eslint/restrict-template-expressions": ["error", { allowNumber: true }],
             "@typescript-eslint/strict-boolean-expressions": ["error", { allowNullableBoolean: true }],
+            "eqeqeq": ["error", "smart"],
             "func-style": ["error", "expression"],
             "prefer-arrow-callback": "error",
+            "prefer-template": "error",
         },
     },
 );
