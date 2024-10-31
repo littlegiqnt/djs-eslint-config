@@ -101,7 +101,7 @@ export const createConfig = (options: CreateConfigOptions) => tsEslint.config(
             "@typescript-eslint/strict-boolean-expressions": ["error", { allowNullableBoolean: true }],
             "eqeqeq": ["error", "smart"],
             "func-style": ["error", "expression"],
-            "prefer-arrow-callback": "error",
+            "prefer-arrow-callback": ["error", { allowUnboundThis: false }],
             "prefer-template": "error",
         },
     },
