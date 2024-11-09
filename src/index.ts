@@ -109,6 +109,6 @@ export const createConfig = (options: CreateConfigOptions) => tsEslint.config(
     },
     {
         name: "giqnt/custom",
-        rules: options.overrides,
+        rules: options.overrides ?? {},
     },
 );
