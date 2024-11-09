@@ -3,9 +3,11 @@ import importXPlugin from "eslint-plugin-import-x";
 import unusedImportsPlugin from "eslint-plugin-unused-imports";
 import eslint from "@eslint/js";
 import tsEslint from "typescript-eslint";
+import type { TSESLint } from "@typescript-eslint/utils";
 
 interface CreateConfigOptions {
     rootDir: string;
+    overrides?: TSESLint.FlatConfig.Rules;
 }
 
 export const createConfig = (options: CreateConfigOptions) => tsEslint.config(
@@ -104,5 +106,9 @@ export const createConfig = (options: CreateConfigOptions) => tsEslint.config(
             "prefer-arrow-callback": ["error", { allowUnboundThis: false }],
             "prefer-template": "error",
         },
+    },
+    {
+        name: "giqnt/custom",
+        rules: options.overrides,
     },
 );
